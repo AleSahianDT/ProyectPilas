@@ -19,7 +19,6 @@ public class Pila {
         if (estaVacia())
             throw new Exception("No hay elementos");
         return numeros.pop();
-        //POP PARA SACAR ELEMENTOS
     }
 
     public Integer cima() throws Exception{
@@ -34,15 +33,17 @@ public class Pila {
         return numeros.search(i);
     }
 
-    public String convertirBinario(int numeroDecimal) {
-        if (numeroDecimal == 0) return "0";
-
-        StringBuilder binario = new StringBuilder();
-        while (numeroDecimal > 0) {
-            binario.insert(0, numeroDecimal % 2);
-            numeroDecimal /= 2;
+    public String convertirBinario (int numero){
+        Stack<Integer> pila = new Stack<Integer>();
+        String binario = "";
+        while(numero>0){
+            pila.push(numero%2);
+            numero = numero/2;
         }
-        return binario.toString();
+        while(!pila.empty()){
+            binario += pila.pop();
+        }
+        return binario;
     }
 
     @Override

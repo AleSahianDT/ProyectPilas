@@ -13,9 +13,9 @@ public class VentanaBinario {
         Convertir.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                int numeroDecimal = Integer.parseInt(textNumero.getText());
-                JOptionPane.showMessageDialog(null, "El numero ingresado "+numeroDecimal+
-                        " en binario es: "+pila.convertirBinario(20));
+                JOptionPane.showMessageDialog(null,"El numero decimal " +textNumero.getText()+ ", en binario es "+pila.convertirBinario(Integer.parseInt(textNumero.getText())));
+                textArea1.setText(pila.convertirBinario(Integer.parseInt(textNumero.getText())));
+                textNumero.setText("");
             }
         });
     }
