@@ -7,7 +7,7 @@ public class Pila {
         numeros = new Stack<Integer>();
     }
 
-    public boolean estaVaacia(){
+    public boolean estaVacia(){
         return numeros.empty();
     }
 
@@ -16,35 +16,33 @@ public class Pila {
     }
 
     public Integer desapilar() throws Exception {
-        if (estaVaacia())
+        if (estaVacia())
             throw new Exception("No hay elementos");
         return numeros.pop();
         //POP PARA SACAR ELEMENTOS
     }
 
     public Integer cima() throws Exception{
-        if (estaVaacia())
+        if (estaVacia())
             throw new Exception("No hay elementos");
         return numeros.peek();
     }
 
     public int buscarElemento(int i) throws Exception{
-        if (estaVaacia())
+        if (estaVacia())
             throw new Exception("No hay elementos");
         return numeros.search(i);
     }
 
-    public String convertirBinario(){
-        double[] binario = {1000};
-        int exp = 0;
-        double decimal = 0;
+    public String convertirBinario(int numeroDecimal) {
+        if (numeroDecimal == 0) return "0";
 
-        for(int i = 0; i < binario.length; i++) {
-            for(exp = 0; exp < 4; exp++) {
-                decimal = binario[i] * (int)Math.pow(2, exp);
-            }
+        StringBuilder binario = new StringBuilder();
+        while (numeroDecimal > 0) {
+            binario.insert(0, numeroDecimal % 2);
+            numeroDecimal /= 2;
         }
-        return String.valueOf(binario);
+        return binario.toString();
     }
 
     @Override

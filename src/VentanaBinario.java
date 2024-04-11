@@ -13,11 +13,11 @@ public class VentanaBinario {
         Convertir.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                JOptionPane.showMessageDialog(null,"El numero decimal dado, en binario es "+textNumero.getText());
-                textArea1.setText(pila.convertirBinario());
+                int numeroDecimal = Integer.parseInt(textNumero.getText());
+                JOptionPane.showMessageDialog(null, "El numero ingresado "+numeroDecimal+
+                        " en binario es: "+pila.convertirBinario(20));
             }
         });
-
     }
     public static void main(String[] args) {
         JFrame frame = new JFrame("VentanaBinario");
