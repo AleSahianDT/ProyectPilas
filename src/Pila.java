@@ -1,5 +1,7 @@
 import java.util.Stack;
-
+//push: apilar
+//peek: saber cual ingresamos al final
+//pop: desapilar
 public class Pila {
     private Stack <Integer> numeros;
 
